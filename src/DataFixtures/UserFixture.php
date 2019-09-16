@@ -23,8 +23,6 @@ class UserFixture extends Fixture
      }
     public function load(ObjectManager $manager)
     {
-        var_dump(get_class($this->em));
-        die();
         $user = new Users();
         $user->setEmail('sazon@nxt.ru');
         $user->setPassword($this->passwordEncoder->encodePassword(
