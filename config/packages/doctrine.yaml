@@ -10,17 +10,11 @@ doctrine:
         default_connection: default
         connections:
             default:
-                url: '%env(resolve:DATABASE_URL)%'
-                driver: 'pdo_pgsql'
-                server_version: '5.7'
+                url: '%env(DATABASE_URL)%'
+                driver: pdo_mysql
                 default_table_options:
                     charset: utf8mb4
                     collate: utf8mb4_unicode_ci
-#            lp_perl:
-#                url: '%env(DATABASE_LP_PERL_URL)%'
-#                driver: pdo_mysql
-#                server_version: '5.7'
-#                charset: UTF8
     orm:
         default_entity_manager: default
         entity_managers:
@@ -33,14 +27,3 @@ doctrine:
                         dir: '%kernel.project_dir%/src/Entity'
                         prefix: 'App\Entity'
                         alias: App
-#            lp_perl:
-#                connection: lp_perl
-#                mappings:
-#                    LpPerlEntity:
-#                        is_bundle: false
-#                        type: annotation
-#                        dir: '%kernel.project_dir%/src/LpPerlEntity'
-#                        prefix: 'App\LpPerlEntity'
-#                        alias: LpPerlEntity
-
-
